@@ -1,0 +1,20 @@
+{
+  "keyword": "computer",
+  "commands": [
+    {
+      "utterance": "say hello",
+      "command": "python3 tts.py 'hello'",
+      "subprocess_options": []
+    },
+    {
+      "utterance": "say moo",
+      "command": "python3 tts.py 'moo'",
+      "subprocess_options": []
+    },
+    {
+      "utterance": "what time is it",
+      "command": "bash plugins/time.sh",
+      "subprocess_options": []
+    }
+  ]
+}
