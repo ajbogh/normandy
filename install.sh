@@ -9,3 +9,4 @@ pip3 install SpeechRecognition
 pip3 install pocketsphinx
 pip3 install python-Levenshtein
 pip3 install google-api-python-client
+pip3 install psutil

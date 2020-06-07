@@ -4,6 +4,7 @@ import sys
 import os
 import time
 from lib.command_interpreter import interpret_command
+import json
 
 r = sr.Recognizer()
 mic = sr.Microphone()
@@ -19,13 +20,17 @@ def listen(source):
   # if a RequestError or UnknownValueError exception is caught,
   #     update the response object accordingly
   try:
-    utterance = r.recognize_houndify(audio)
-    # utterance = r.recognize_sphinx(audio)
-    old_energy_threshold = r.energy_threshold
-    r.energy_threshold = 10000
-    print("Recognized:", utterance)
-    print("Updated energy threshold from {} to {}".format(old_energy_threshold, r.energy_threshold))
-    interpret_command(utterance)
+    with open('./config/config.json') as config_file:
+      config = json.load(config_file)
+      client_id = config['houndify']['client_id']
+      client_key = config['houndify']['client_key']
+      utterance = r.recognize_houndify(audio, client_id, client_key)
+      # utterance = r.recognize_sphinx(audio)
+      old_energy_threshold = r.energy_threshold
+      r.energy_threshold = 10000
+      print("Recognized:", utterance)
+      print("Updated energy threshold from {} to {}".format(old_energy_threshold, r.energy_threshold))
+      interpret_command(utterance)
   except sr.RequestError as e:
     # API was unreachable or unresponsive
     print("Error: API unavailable", e)

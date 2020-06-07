@@ -15,6 +15,11 @@
       "utterance": "what time is it",
       "command": "bash plugins/time.sh",
       "subprocess_options": []
+    },
+    {
+      "utterance": "how are you feeling",
+      "command": "python3 plugins/ps_stats.py",
+      "subprocess_options": []
     }
   ]
 }
