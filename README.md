@@ -42,8 +42,8 @@ You must speak the keyword first. The command can be spoken in the same sentence
 | Config property | Description |
 |----------|------|
 | houndify | A parent key for the Houndify configuration |
-|   client_id | The Houndify client ID |
-|   client_key | The Houndify client key |
+| houndify.client_id | The Houndify client ID |
+| houndify.client_key | The Houndify client key |
 | keyword | A spoken word to activate the assistant using offline recognition, and begin online recognition |
 
 The `keyword` property should be a simple, easy to identify word. It's recommended to use one or two words at the most, 3 syllables or less. By default the keyword is "computer". The system may have trouble with heavy accents, so make sure the keyword is not affected by any accent. For instance, "computer" is often recognized as "come here" - these recognition errors are alleviated with a [Levenshtein](https://en.wikipedia.org/wiki/Levenshtein_distance) algorithm.
