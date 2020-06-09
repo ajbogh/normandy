@@ -15,7 +15,7 @@ Requirements: Python 3
 
 **Houndify:**
 
-Normandy uses Houndify for speech recognition beyond the keyword. Houndify provides a limited free developer account that you can use for limited API requests (100 per day).
+Normandy uses Houndify for speech recognition beyond the keyword. Houndify provides a limited free developer account that you can use for limited API requests (100 per day). Houndify API usage is protected by an offline keyword to reduce amount of online requests.
 
 Register for a free developer account in Houndify.
 
